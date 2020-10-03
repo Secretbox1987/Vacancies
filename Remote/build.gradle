@@ -1,0 +1,21 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':Data')
+
+    def remoteDependencies = rootProject.ext.remoteDependencies
+
+    implementation remoteDependencies.javaxInject
+    implementation remoteDependencies.retrofit
+    implementation remoteDependencies.retrofitConverter
+    implementation remoteDependencies.retrofitAdapter
+    implementation remoteDependencies.loggingInterceptor
+
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

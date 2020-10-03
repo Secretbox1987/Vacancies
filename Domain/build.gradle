@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    def domainDependencies = rootProject.ext.domainDependencies
+
+    implementation domainDependencies.javaxInject
+    implementation domainDependencies.rxJava
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
